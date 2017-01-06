@@ -1,0 +1,142 @@
+<<<<<<< HEAD
+@import url(http://fonts.googleapis.com/css?family=Raleway:200,600,700,400);
+body {
+	background: #cae4b6;
+	color: #c94e50;
+	font-weight: 400;
+	font-size: 1em;
+	font-family: 'Raleway', Arial, sans-serif;
+}
+
+.content {
+	max-width: 1000px;
+	padding: 0 1em;
+	margin: 0 auto;
+	text-align: center;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.version{
+    position: fixed;
+    top: 600px;
+    right: 600px;
+}
+
+/* Header */
+.codrops-header {
+	padding: 2.75em 0 3em;
+	letter-spacing: -1px;
+}
+
+.codrops-header h1 {
+	font-size: 3.65em;
+	line-height: 1;
+	margin: 0;
+}
+
+.codrops-header h1 span {
+	display: block;
+	width: 15em;
+	font-size: 21%;
+	padding: 1em 0;
+	margin: 0 auto;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	position: relative;
+}
+
+.codrops-header h1 span::before,
+.codrops-header h1 span::after {
+	content: '';
+	position: absolute;
+	width: 25%;
+	height: 2px;
+	top: 50%;
+	margin-top: -1px;
+	background: #c94e50;
+}
+
+.codrops-header h1 span::before {
+	right: 100%;
+}
+
+.codrops-header h1 span::after {
+	left: 100%;
+}
+=======
+@import url(http://fonts.googleapis.com/css?family=Raleway:200,600,700,400);
+body {
+	background: #E91E63;
+	color: #FCE4EC;
+	font-weight: 400;
+	font-size: 1em;
+	font-family: 'Raleway', Arial, sans-serif;
+}
+
+.content {
+	max-width: 1000px;
+	padding: 0 1em;
+	margin: 0 auto;
+	text-align: center;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.version{
+    position: fixed;
+    top: 600px;
+    right: 600px;
+}
+
+
+/* Header */
+.codrops-header {
+	padding: 2.75em 0 3em;
+	letter-spacing: -1px;
+}
+
+.codrops-header h1 {
+	font-size: 3.65em;
+	line-height: 1;
+	margin: 0;
+}
+
+.codrops-header h1 span {
+	display: block;
+	width: 15em;
+	font-size: 21%;
+	padding: 1em 0;
+	margin: 0 auto;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	position: relative;
+}
+
+.codrops-header h1 span::before,
+.codrops-header h1 span::after {
+	content: '';
+	position: absolute;
+	width: 25%;
+	height: 2px;
+	top: 50%;
+	margin-top: -1px;
+	background: #FCE4EC;
+}
+
+.codrops-header h1 span::before {
+	right: 100%;
+}
+
+.codrops-header h1 span::after {
+	left: 100%;
+}
+>>>>>>> 4ac9b1b122fc3c462403a9f242584e3c86357be7
