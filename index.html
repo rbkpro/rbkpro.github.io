@@ -107,7 +107,7 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="I-What-we-are-going-to-Solve"><a href="#I-What-we-are-going-to-Solve" class="headerlink" title="I- What we are going to Solve ?"></a>I- What we are going to Solve ?</h2><p>In this post I will show you how to comme up quickly and use Jersey JAX-RS with your existing application that you built  using Spring stack technology: </p>
+        <h2 id="I-What-we-are-going-to-Solve"><a href="#I-What-we-are-going-to-Solve" class="headerlink" title="I- What we are going to Solve ?"></a>I- What we are going to Solve ?</h2><p>In this post I will show you how to come up quickly and use Jersey JAX-RS with your existing application that you built  using Spring stack technology: </p>
 <p> 1- Srping MVC for the application FrontEnd.<br> 2- Spring Core for your aplication Business Logic.<br> 3- Hibernate with Spring Data integration for the persistence layer of your application.</p>
 <p> In other words how to add a RestFull API to your existing application </p>
 <h3 id="The-only-modification-will-be-in-your-web-xml-file"><a href="#The-only-modification-will-be-in-your-web-xml-file" class="headerlink" title="The only modification will be in your  web.xml file :"></a>The only modification will be in your  web.xml file :</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</div><div class="line">&lt;web-app xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></div><div class="line">         xmlns=<span class="string">"http://java.sun.com/xml/ns/javaee"</span></div><div class="line">         xsi:schemaLocation=<span class="string">"http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"</span></div><div class="line">         version=<span class="string">"2.5"</span>&gt;</div><div class="line"></div><div class="line">    &lt;!-- Spring MVC context --&gt;</div><div class="line">    &lt;servlet&gt;</div><div class="line">        &lt;servlet-name&gt;dispatcher&lt;/servlet-name&gt;</div><div class="line">        &lt;servlet-class&gt;</div><div class="line">            org.springframework.web.servlet.DispatcherServlet</div><div class="line">        &lt;/servlet-class&gt;</div><div class="line">        &lt;load-on-startup&gt;2&lt;/load-on-startup&gt;</div><div class="line">    &lt;/servlet&gt;</div><div class="line">    &lt;servlet-mapping&gt;</div><div class="line">        &lt;servlet-name&gt;dispatcher&lt;/servlet-name&gt;</div><div class="line">        &lt;url-pattern&gt;/&lt;/url-pattern&gt;</div><div class="line">    &lt;/servlet-mapping&gt;</div><div class="line">    &lt;!-- Jersey rest context --&gt;</div><div class="line">    &lt;servlet&gt;</div><div class="line">        &lt;servlet-name&gt;Jersey Rest&lt;/servlet-name&gt;</div><div class="line">        &lt;servlet-class&gt;org.glassfish.jersey.servlet.ServletContainer&lt;/servlet-class&gt;</div><div class="line">        &lt;init-param&gt;</div><div class="line">            &lt;param-name&gt;jersey.config.server.provider.packages&lt;/param-name&gt;</div><div class="line">            &lt;param-value&gt;org.carpooling.resource&lt;/param-value&gt;</div><div class="line">        &lt;/init-param&gt;</div><div class="line">        &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;</div><div class="line">    &lt;/servlet&gt;</div><div class="line">    &lt;servlet-mapping&gt;</div><div class="line">        &lt;servlet-name&gt;Jersey Rest&lt;/servlet-name&gt;</div><div class="line">        &lt;url-pattern&gt;/api/*&lt;/url-pattern&gt;</div><div class="line">    &lt;/servlet-mapping&gt;</div><div class="line">    &lt;!-- Spring Root context --&gt;</div><div class="line">    &lt;listener&gt;</div><div class="line">        &lt;listener-class&gt;</div><div class="line">            org.springframework.web.context.ContextLoaderListener</div><div class="line">        &lt;/listener-class&gt;</div><div class="line">    &lt;/listener&gt;</div><div class="line">    &lt;context-param&gt;</div><div class="line">        &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;</div><div class="line">        &lt;param-value&gt;</div><div class="line">            /WEB-INF/applicationContext.xml</div><div class="line">            /WEB-INF/dispatcher-servlet.xml</div><div class="line">        &lt;/param-value&gt;</div><div class="line">    &lt;/context-param&gt;</div><div class="line">&lt;/web-app&gt;</div></pre></td></tr></table></figure>
@@ -133,7 +133,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://rbkpro.github.io/2016/01/21/Integration/" data-id="ciy7q0ke20000rrjencq1hfo2" class="article-share-link">
+      <a data-url="http://rbkpro.github.io/2016/01/21/Integration/" data-id="ciyc138fk00008wjel3q03g11" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -202,7 +202,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://rbkpro.github.io/2015/07/07/My-Internship-at-Djezzy/" data-id="ciy7q0kf60003rrjewnii9s02" class="article-share-link">
+      <a data-url="http://rbkpro.github.io/2015/07/07/My-Internship-at-Djezzy/" data-id="ciyc138g400048wjez6vguqiv" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -256,7 +256,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://rbkpro.github.io/2015/05/30/hello-world/" data-id="ciy7q0kfa0004rrjesf8hjaic" class="article-share-link">
+      <a data-url="http://rbkpro.github.io/2015/05/30/hello-world/" data-id="ciyc138fu00028wjeah8svu7m" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
